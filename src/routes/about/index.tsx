@@ -8,8 +8,6 @@ export const Route = createFileRoute('/about/')({
 function RouteComponent() {
 
   return <div>
-    <Button>
-      Hola mundo
-    </Button>
+  
   </div>
 }
