@@ -14,7 +14,12 @@ import { Route as rootRoute } from './routes/__root'
 import { Route as IndexImport } from './routes/index'
 import { Route as AquariumIndexImport } from './routes/aquarium/index'
 import { Route as AboutIndexImport } from './routes/about/index'
+<<<<<<< HEAD
 import { Route as AquariumPezIndexImport } from './routes/aquarium/pez/index'
+=======
+import { Route as AuthRegisterIndexImport } from './routes/auth/register/index'
+import { Route as AuthLoginIndexImport } from './routes/auth/login/index'
+>>>>>>> 810f850ae310a18ff4b35ff859e542e09ec871c0
 
 // Create/Update Routes
 
@@ -36,9 +41,21 @@ const AboutIndexRoute = AboutIndexImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
+<<<<<<< HEAD
 const AquariumPezIndexRoute = AquariumPezIndexImport.update({
   id: '/aquarium/pez/',
   path: '/aquarium/pez/',
+=======
+const AuthRegisterIndexRoute = AuthRegisterIndexImport.update({
+  id: '/auth/register/',
+  path: '/auth/register/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const AuthLoginIndexRoute = AuthLoginIndexImport.update({
+  id: '/auth/login/',
+  path: '/auth/login/',
+>>>>>>> 810f850ae310a18ff4b35ff859e542e09ec871c0
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -60,6 +77,7 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutIndexImport
       parentRoute: typeof rootRoute
     }
+<<<<<<< HEAD
     '/aquarium/': {
       id: '/aquarium/'
       path: '/aquarium'
@@ -72,6 +90,20 @@ declare module '@tanstack/react-router' {
       path: '/aquarium/pez'
       fullPath: '/aquarium/pez'
       preLoaderRoute: typeof AquariumPezIndexImport
+=======
+    '/auth/login/': {
+      id: '/auth/login/'
+      path: '/auth/login'
+      fullPath: '/auth/login'
+      preLoaderRoute: typeof AuthLoginIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/auth/register/': {
+      id: '/auth/register/'
+      path: '/auth/register'
+      fullPath: '/auth/register'
+      preLoaderRoute: typeof AuthRegisterIndexImport
+>>>>>>> 810f850ae310a18ff4b35ff859e542e09ec871c0
       parentRoute: typeof rootRoute
     }
   }
@@ -82,46 +114,78 @@ declare module '@tanstack/react-router' {
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutIndexRoute
+<<<<<<< HEAD
   '/aquarium': typeof AquariumIndexRoute
   '/aquarium/pez': typeof AquariumPezIndexRoute
+=======
+  '/auth/login': typeof AuthLoginIndexRoute
+  '/auth/register': typeof AuthRegisterIndexRoute
+>>>>>>> 810f850ae310a18ff4b35ff859e542e09ec871c0
 }
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutIndexRoute
+<<<<<<< HEAD
   '/aquarium': typeof AquariumIndexRoute
   '/aquarium/pez': typeof AquariumPezIndexRoute
+=======
+  '/auth/login': typeof AuthLoginIndexRoute
+  '/auth/register': typeof AuthRegisterIndexRoute
+>>>>>>> 810f850ae310a18ff4b35ff859e542e09ec871c0
 }
 
 export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexRoute
   '/about/': typeof AboutIndexRoute
+<<<<<<< HEAD
   '/aquarium/': typeof AquariumIndexRoute
   '/aquarium/pez/': typeof AquariumPezIndexRoute
+=======
+  '/auth/login/': typeof AuthLoginIndexRoute
+  '/auth/register/': typeof AuthRegisterIndexRoute
+>>>>>>> 810f850ae310a18ff4b35ff859e542e09ec871c0
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
+<<<<<<< HEAD
   fullPaths: '/' | '/about' | '/aquarium' | '/aquarium/pez'
   fileRoutesByTo: FileRoutesByTo
   to: '/' | '/about' | '/aquarium' | '/aquarium/pez'
   id: '__root__' | '/' | '/about/' | '/aquarium/' | '/aquarium/pez/'
+=======
+  fullPaths: '/' | '/about' | '/auth/login' | '/auth/register'
+  fileRoutesByTo: FileRoutesByTo
+  to: '/' | '/about' | '/auth/login' | '/auth/register'
+  id: '__root__' | '/' | '/about/' | '/auth/login/' | '/auth/register/'
+>>>>>>> 810f850ae310a18ff4b35ff859e542e09ec871c0
   fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutIndexRoute: typeof AboutIndexRoute
+<<<<<<< HEAD
   AquariumIndexRoute: typeof AquariumIndexRoute
   AquariumPezIndexRoute: typeof AquariumPezIndexRoute
+=======
+  AuthLoginIndexRoute: typeof AuthLoginIndexRoute
+  AuthRegisterIndexRoute: typeof AuthRegisterIndexRoute
+>>>>>>> 810f850ae310a18ff4b35ff859e542e09ec871c0
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutIndexRoute: AboutIndexRoute,
+<<<<<<< HEAD
   AquariumIndexRoute: AquariumIndexRoute,
   AquariumPezIndexRoute: AquariumPezIndexRoute,
+=======
+  AuthLoginIndexRoute: AuthLoginIndexRoute,
+  AuthRegisterIndexRoute: AuthRegisterIndexRoute,
+>>>>>>> 810f850ae310a18ff4b35ff859e542e09ec871c0
 }
 
 export const routeTree = rootRoute
@@ -136,8 +200,13 @@ export const routeTree = rootRoute
       "children": [
         "/",
         "/about/",
+<<<<<<< HEAD
         "/aquarium/",
         "/aquarium/pez/"
+=======
+        "/auth/login/",
+        "/auth/register/"
+>>>>>>> 810f850ae310a18ff4b35ff859e542e09ec871c0
       ]
     },
     "/": {
@@ -146,11 +215,19 @@ export const routeTree = rootRoute
     "/about/": {
       "filePath": "about/index.tsx"
     },
+<<<<<<< HEAD
     "/aquarium/": {
       "filePath": "aquarium/index.tsx"
     },
     "/aquarium/pez/": {
       "filePath": "aquarium/pez/index.tsx"
+=======
+    "/auth/login/": {
+      "filePath": "auth/login/index.tsx"
+    },
+    "/auth/register/": {
+      "filePath": "auth/register/index.tsx"
+>>>>>>> 810f850ae310a18ff4b35ff859e542e09ec871c0
     }
   }
 }
