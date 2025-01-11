@@ -30,7 +30,7 @@ export const AuthProvider = ({ children }: {
             value={{
                 user: session?.user ?? null,
                 session: session,
-                setSession: setSession
+                setSession: setSession,
             }}
         >
             {children}

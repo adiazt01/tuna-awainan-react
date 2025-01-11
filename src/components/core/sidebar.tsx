@@ -7,8 +7,18 @@ import {
 } from "@/components/ui/sidebar"
 import { Button } from "../ui/button"
 import { Link } from "@tanstack/react-router"
+import { useAuth } from "@/hooks/use-auth"
+import { logout } from "@/services/auth"
+import { useMutation } from "@tanstack/react-query"
 
 export function AppSidebar() {
+  const { session } = useAuth()
+  const lgoutMutaion = useMutation({
+    mutationFn: async () => {
+      await logout()
+    }
+  })
+
   return (
     <Sidebar >
       <SidebarHeader />
@@ -26,9 +36,19 @@ export function AppSidebar() {
           <Button asChild variant={"sidebarLink"} size={"sidebarLink"}>
             <Link to="/about">Home</Link>
           </Button>
-          <Button asChild variant={"sidebarLink"} size={"sidebarLink"}>
-            <Link to="/auth/login">Iniciar sesion</Link>
-          </Button>
+          {
+            session ? (
+              <Button
+                onClick={() => lgoutMutaion.mutate()}
+                variantm={"sidebarLink"} size={"sidebarLink"}>
+                Logout
+              </Button>
+            ) : (
+              <Button asChild variant={"sidebarLink"} size={"sidebarLink"}>
+                <Link to="/auth/login">Login</Link>
+              </Button>
+            )
+          }
         </SidebarGroup>
 
       </SidebarContent>
