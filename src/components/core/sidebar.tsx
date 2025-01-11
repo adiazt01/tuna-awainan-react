@@ -40,7 +40,7 @@ export function AppSidebar() {
             session ? (
               <Button
                 onClick={() => lgoutMutaion.mutate()}
-                variantm={"sidebarLink"} size={"sidebarLink"}>
+                variant={"sidebarLink"} size={"sidebarLink"}>
                 Logout
               </Button>
             ) : (
