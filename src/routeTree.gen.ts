@@ -12,7 +12,9 @@
 
 import { Route as rootRoute } from './routes/__root'
 import { Route as IndexImport } from './routes/index'
+import { Route as AquariumIndexImport } from './routes/aquarium/index'
 import { Route as AboutIndexImport } from './routes/about/index'
+import { Route as AquariumPezIndexImport } from './routes/aquarium/pez/index'
 
 // Create/Update Routes
 
@@ -22,9 +24,21 @@ const IndexRoute = IndexImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
+const AquariumIndexRoute = AquariumIndexImport.update({
+  id: '/aquarium/',
+  path: '/aquarium/',
+  getParentRoute: () => rootRoute,
+} as any)
+
 const AboutIndexRoute = AboutIndexImport.update({
   id: '/about/',
   path: '/about/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const AquariumPezIndexRoute = AquariumPezIndexImport.update({
+  id: '/aquarium/pez/',
+  path: '/aquarium/pez/',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -46,6 +60,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutIndexImport
       parentRoute: typeof rootRoute
     }
+    '/aquarium/': {
+      id: '/aquarium/'
+      path: '/aquarium'
+      fullPath: '/aquarium'
+      preLoaderRoute: typeof AquariumIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/aquarium/pez/': {
+      id: '/aquarium/pez/'
+      path: '/aquarium/pez'
+      fullPath: '/aquarium/pez'
+      preLoaderRoute: typeof AquariumPezIndexImport
+      parentRoute: typeof rootRoute
+    }
   }
 }
 
@@ -54,36 +82,46 @@ declare module '@tanstack/react-router' {
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutIndexRoute
+  '/aquarium': typeof AquariumIndexRoute
+  '/aquarium/pez': typeof AquariumPezIndexRoute
 }
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutIndexRoute
+  '/aquarium': typeof AquariumIndexRoute
+  '/aquarium/pez': typeof AquariumPezIndexRoute
 }
 
 export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexRoute
   '/about/': typeof AboutIndexRoute
+  '/aquarium/': typeof AquariumIndexRoute
+  '/aquarium/pez/': typeof AquariumPezIndexRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about'
+  fullPaths: '/' | '/about' | '/aquarium' | '/aquarium/pez'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about'
-  id: '__root__' | '/' | '/about/'
+  to: '/' | '/about' | '/aquarium' | '/aquarium/pez'
+  id: '__root__' | '/' | '/about/' | '/aquarium/' | '/aquarium/pez/'
   fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutIndexRoute: typeof AboutIndexRoute
+  AquariumIndexRoute: typeof AquariumIndexRoute
+  AquariumPezIndexRoute: typeof AquariumPezIndexRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutIndexRoute: AboutIndexRoute,
+  AquariumIndexRoute: AquariumIndexRoute,
+  AquariumPezIndexRoute: AquariumPezIndexRoute,
 }
 
 export const routeTree = rootRoute
@@ -97,7 +135,9 @@ export const routeTree = rootRoute
       "filePath": "__root.tsx",
       "children": [
         "/",
-        "/about/"
+        "/about/",
+        "/aquarium/",
+        "/aquarium/pez/"
       ]
     },
     "/": {
@@ -105,6 +145,12 @@ export const routeTree = rootRoute
     },
     "/about/": {
       "filePath": "about/index.tsx"
+    },
+    "/aquarium/": {
+      "filePath": "aquarium/index.tsx"
+    },
+    "/aquarium/pez/": {
+      "filePath": "aquarium/pez/index.tsx"
     }
   }
 }
