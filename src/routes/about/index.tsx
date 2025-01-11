@@ -52,9 +52,41 @@ const moksPost = [
   }
 ]
 
+
+const mockComentsPost = [
+  {
+    id: '1',
+    content: 'Que buen post',
+    postId: '2',
+    userId: '1',
+    date: new Date()
+  },
+  {
+    id: '2',
+    content: 'Que buen post',
+    postId: '2',
+    userId: '1',
+    date: new Date()
+  },
+  {
+    id: '3',
+    content: 'Que buen post',
+    postId: '2',
+    userId: '1',
+    date: new Date()
+  },
+  {
+    id: '4',
+    content: 'Que buen post',
+    postId: '2',
+    userId: '1',
+    date: new Date()
+  }
+]
+
 function RouteComponent() {
 
   return <div>
-    <PostPage post={moksPost[1]}/>
+    <PostPage post={moksPost[1]} coments={mockComentsPost}/>
   </div>
 }

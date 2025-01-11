@@ -34,3 +34,16 @@ export type PostImg = Pick<Post,'imgFile'>
 export type PostTag = Pick<Post,'tag'>
 
 export type ListOfPosts = Post[]
+
+//comentarios
+
+export type ComentPost = {
+    id: string,
+    content: string,
+    postId: string,
+    userId: string,
+    date: Date,
+}
+
+export type ComentsPosts = ComentPost[]
+
