@@ -24,22 +24,10 @@ export function AppSidebar() {
         </SidebarGroup>
         <SidebarGroup className="flex flex-col gap-6">
           <Button asChild variant={"sidebarLink"} size={"sidebarLink"}>
-            <Link to="/">Home</Link>
+            <Link to="/about">Home</Link>
           </Button>
           <Button asChild variant={"sidebarLink"} size={"sidebarLink"}>
-            <Link to="/">Home</Link>
-          </Button>
-          <Button asChild variant={"sidebarLink"} size={"sidebarLink"}>
-            <Link to="/">Home</Link>
-          </Button>
-          <Button asChild variant={"sidebarLink"} size={"sidebarLink"}>
-            <Link to="/">Home</Link>
-          </Button>
-          <Button asChild variant={"sidebarLink"} size={"sidebarLink"}>
-            <Link to="/">Home</Link>
-          </Button>
-          <Button asChild variant={"sidebarLink"} size={"sidebarLink"}>
-            <Link to="/">Home</Link>
+            <Link to="/auth/login">Iniciar sesion</Link>
           </Button>
         </SidebarGroup>
 
