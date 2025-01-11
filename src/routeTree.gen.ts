@@ -13,7 +13,9 @@
 import { Route as rootRoute } from './routes/__root'
 import { Route as IndexImport } from './routes/index'
 import { Route as AboutIndexImport } from './routes/about/index'
+import { Route as ExpertoIntroExpertoImport } from './routes/experto/introExperto'
 import { Route as ArticlesIntroArticlesImport } from './routes/articles/introArticles'
+import { Route as ExpertoPostIndexImport } from './routes/experto/post/index'
 import { Route as ArticlesCategoryIndexImport } from './routes/articles/category/index'
 import { Route as ArticlesCategoryCategoryidIndexImport } from './routes/articles/category/$categoryid/index'
 
@@ -31,9 +33,21 @@ const AboutIndexRoute = AboutIndexImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
+const ExpertoIntroExpertoRoute = ExpertoIntroExpertoImport.update({
+  id: '/experto/introExperto',
+  path: '/experto/introExperto',
+  getParentRoute: () => rootRoute,
+} as any)
+
 const ArticlesIntroArticlesRoute = ArticlesIntroArticlesImport.update({
   id: '/articles/introArticles',
   path: '/articles/introArticles',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const ExpertoPostIndexRoute = ExpertoPostIndexImport.update({
+  id: '/experto/post/',
+  path: '/experto/post/',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -68,6 +82,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ArticlesIntroArticlesImport
       parentRoute: typeof rootRoute
     }
+    '/experto/introExperto': {
+      id: '/experto/introExperto'
+      path: '/experto/introExperto'
+      fullPath: '/experto/introExperto'
+      preLoaderRoute: typeof ExpertoIntroExpertoImport
+      parentRoute: typeof rootRoute
+    }
     '/about/': {
       id: '/about/'
       path: '/about'
@@ -80,6 +101,13 @@ declare module '@tanstack/react-router' {
       path: '/articles/category'
       fullPath: '/articles/category'
       preLoaderRoute: typeof ArticlesCategoryIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/experto/post/': {
+      id: '/experto/post/'
+      path: '/experto/post'
+      fullPath: '/experto/post'
+      preLoaderRoute: typeof ExpertoPostIndexImport
       parentRoute: typeof rootRoute
     }
     '/articles/category/$categoryid/': {
@@ -97,16 +125,20 @@ declare module '@tanstack/react-router' {
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/articles/introArticles': typeof ArticlesIntroArticlesRoute
+  '/experto/introExperto': typeof ExpertoIntroExpertoRoute
   '/about': typeof AboutIndexRoute
   '/articles/category': typeof ArticlesCategoryIndexRoute
+  '/experto/post': typeof ExpertoPostIndexRoute
   '/articles/category/$categoryid': typeof ArticlesCategoryCategoryidIndexRoute
 }
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/articles/introArticles': typeof ArticlesIntroArticlesRoute
+  '/experto/introExperto': typeof ExpertoIntroExpertoRoute
   '/about': typeof AboutIndexRoute
   '/articles/category': typeof ArticlesCategoryIndexRoute
+  '/experto/post': typeof ExpertoPostIndexRoute
   '/articles/category/$categoryid': typeof ArticlesCategoryCategoryidIndexRoute
 }
 
@@ -114,8 +146,10 @@ export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexRoute
   '/articles/introArticles': typeof ArticlesIntroArticlesRoute
+  '/experto/introExperto': typeof ExpertoIntroExpertoRoute
   '/about/': typeof AboutIndexRoute
   '/articles/category/': typeof ArticlesCategoryIndexRoute
+  '/experto/post/': typeof ExpertoPostIndexRoute
   '/articles/category/$categoryid/': typeof ArticlesCategoryCategoryidIndexRoute
 }
 
@@ -124,22 +158,28 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/articles/introArticles'
+    | '/experto/introExperto'
     | '/about'
     | '/articles/category'
+    | '/experto/post'
     | '/articles/category/$categoryid'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/articles/introArticles'
+    | '/experto/introExperto'
     | '/about'
     | '/articles/category'
+    | '/experto/post'
     | '/articles/category/$categoryid'
   id:
     | '__root__'
     | '/'
     | '/articles/introArticles'
+    | '/experto/introExperto'
     | '/about/'
     | '/articles/category/'
+    | '/experto/post/'
     | '/articles/category/$categoryid/'
   fileRoutesById: FileRoutesById
 }
@@ -147,16 +187,20 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ArticlesIntroArticlesRoute: typeof ArticlesIntroArticlesRoute
+  ExpertoIntroExpertoRoute: typeof ExpertoIntroExpertoRoute
   AboutIndexRoute: typeof AboutIndexRoute
   ArticlesCategoryIndexRoute: typeof ArticlesCategoryIndexRoute
+  ExpertoPostIndexRoute: typeof ExpertoPostIndexRoute
   ArticlesCategoryCategoryidIndexRoute: typeof ArticlesCategoryCategoryidIndexRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ArticlesIntroArticlesRoute: ArticlesIntroArticlesRoute,
+  ExpertoIntroExpertoRoute: ExpertoIntroExpertoRoute,
   AboutIndexRoute: AboutIndexRoute,
   ArticlesCategoryIndexRoute: ArticlesCategoryIndexRoute,
+  ExpertoPostIndexRoute: ExpertoPostIndexRoute,
   ArticlesCategoryCategoryidIndexRoute: ArticlesCategoryCategoryidIndexRoute,
 }
 
@@ -172,8 +216,10 @@ export const routeTree = rootRoute
       "children": [
         "/",
         "/articles/introArticles",
+        "/experto/introExperto",
         "/about/",
         "/articles/category/",
+        "/experto/post/",
         "/articles/category/$categoryid/"
       ]
     },
@@ -183,11 +229,17 @@ export const routeTree = rootRoute
     "/articles/introArticles": {
       "filePath": "articles/introArticles.tsx"
     },
+    "/experto/introExperto": {
+      "filePath": "experto/introExperto.tsx"
+    },
     "/about/": {
       "filePath": "about/index.tsx"
     },
     "/articles/category/": {
       "filePath": "articles/category/index.tsx"
+    },
+    "/experto/post/": {
+      "filePath": "experto/post/index.tsx"
     },
     "/articles/category/$categoryid/": {
       "filePath": "articles/category/$categoryid/index.tsx"
