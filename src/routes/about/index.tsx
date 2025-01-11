@@ -2,6 +2,7 @@ import { Button } from '@/components/ui/button'
 import { createFileRoute } from '@tanstack/react-router'
 import { CardsEspecimens } from '@/components/aquarium/CardsEspecimen'
 import { EspecimenPage } from '@/components/aquarium/EspecimenPage'
+import { CardsPosts } from '@/components/novedades/CardsPosts'
 
 
 export const Route = createFileRoute('/about/')({
@@ -19,10 +20,40 @@ const moksPeces = [
   
 ]
 
+const moksPost = [
+  {
+    id: '2',
+    title: 'Fui a la llovizna y me encontre 4 caimanes',
+    text: 'jajajajajajajajajajajajaja JAJAJAJAJAJAJAJAJAJAJAJAJAJAJ jasdfljasñdlkfjasldjfañlsdjfalskdflskjfdasdf',
+    imgFile: '',
+    tag: 'Turismo'
+  },
+  {
+    id: '2',
+    title: 'Fui a la llovizna y me encontre 4 caimanes',
+    text: 'jajajajajajajajajajajajaja JAJAJAJAJAJAJAJAJAJAJAJAJAJAJ jasdfljasñdlkfjasldjfañlsdjfalskdflskjfdasdf',
+    imgFile: '',
+    tag: 'Turismo'
+  },
+  {
+    id: '2',
+    title: 'Fui a la llovizna y me encontre 4 caimanes',
+    text: 'jajajajajajajajajajajajaja JAJAJAJAJAJAJAJAJAJAJAJAJAJAJ jasdfljasñdlkfjasldjfañlsdjfalskdflskjfdasdf',
+    imgFile: '',
+    tag: 'Turismo'
+  },
+  {
+    id: '2',
+    title: 'Fui a la llovizna y me encontre 4 caimanes',
+    text: 'jajajajajajajajajajajajaja JAJAJAJAJAJAJAJAJAJAJAJAJAJAJ jasdfljasñdlkfjasldjfañlsdjfalskdflskjfdasdf',
+    imgFile: '',
+    tag: 'Turismo'
+  }
+]
+
 function RouteComponent() {
 
   return <div>
-    <EspecimenPage especimen={moksPeces[0]}/>
-
+    <CardsPosts posts={moksPost}/>
   </div>
 }
