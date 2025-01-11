@@ -4,24 +4,28 @@ interface Props{
     post: Post;
 }
 
-export const PostPage = ({post}:Props) =>{
-    return (
-        <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 h-600">
-            <a href="#">
-                <img className="rounded-t-lg" src={post.imgFile} alt="" />
-            </a>
-            <div className="p-5">
-                <a href="#">
-                    <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{post.title}</h5>
-                </a>
-                <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">{post.text}</p>
-            </div>
-            <a href='#' className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 mb-4 ml-4 ">
-                Ver más
-                <svg className="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
-                </svg>
-            </a>
+export const PostPage = ({post}:Props) =>(
+    <div className="container mx-auto p-6">
+        <div className="flex flex-col items-center">
+            <h1 className="text-3xl font-bold text-gray-800 dark:text-white">{post.title}</h1>
+            <h4 className='italic'>Autor: {'Anonimo'}</h4>
+            <img src={post.imgFile} alt="" className="w-1/2 h-1/2" />
+            <p className="text-gray-700 dark:text-gray-400">{post.text}</p>
         </div>
-    )
-}
+
+        <form className="mt-[20px] " method="POST">
+            <h3>Deja un comentario</h3>
+            <label className="sr-only">Tu comentario</label>
+            <textarea
+                id="comment"
+                name="content"
+                rows={6}
+                placeholder="Escribe tu comentario aquí..."
+                className="w-full p-4 bg-gray-100 rounded-lg dark:bg-gray-800"
+                required></textarea>
+            <button type="submit" className="bg-[#0aa4bc] px-5 py-4 font-semibold rounded-2xl text-white hover:bg-white hover:text-[#0aa4bc] hover:border-slate-900 hover:border-[1px]">Enviar</button>
+        </form>
+
+
+    </div>
+)

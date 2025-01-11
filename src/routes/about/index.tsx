@@ -3,6 +3,7 @@ import { createFileRoute } from '@tanstack/react-router'
 import { CardsEspecimens } from '@/components/aquarium/CardsEspecimen'
 import { EspecimenPage } from '@/components/aquarium/EspecimenPage'
 import { CardsPosts } from '@/components/novedades/CardsPosts'
+import { PostPage } from '@/components/novedades/PostPage'
 
 
 export const Route = createFileRoute('/about/')({
@@ -54,6 +55,6 @@ const moksPost = [
 function RouteComponent() {
 
   return <div>
-    <CardsPosts posts={moksPost}/>
+    <PostPage post={moksPost[1]}/>
   </div>
 }
