@@ -13,6 +13,9 @@
 import { Route as rootRoute } from './routes/__root'
 import { Route as IndexImport } from './routes/index'
 import { Route as AboutIndexImport } from './routes/about/index'
+import { Route as ArticlesIntroArticlesImport } from './routes/articles/introArticles'
+import { Route as ArticlesCategoryIndexImport } from './routes/articles/category/index'
+import { Route as ArticlesCategoryCategoryidIndexImport } from './routes/articles/category/$categoryid/index'
 
 // Create/Update Routes
 
@@ -28,6 +31,25 @@ const AboutIndexRoute = AboutIndexImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
+const ArticlesIntroArticlesRoute = ArticlesIntroArticlesImport.update({
+  id: '/articles/introArticles',
+  path: '/articles/introArticles',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const ArticlesCategoryIndexRoute = ArticlesCategoryIndexImport.update({
+  id: '/articles/category/',
+  path: '/articles/category/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const ArticlesCategoryCategoryidIndexRoute =
+  ArticlesCategoryCategoryidIndexImport.update({
+    id: '/articles/category/$categoryid/',
+    path: '/articles/category/$categoryid/',
+    getParentRoute: () => rootRoute,
+  } as any)
+
 // Populate the FileRoutesByPath interface
 
 declare module '@tanstack/react-router' {
@@ -39,11 +61,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexImport
       parentRoute: typeof rootRoute
     }
+    '/articles/introArticles': {
+      id: '/articles/introArticles'
+      path: '/articles/introArticles'
+      fullPath: '/articles/introArticles'
+      preLoaderRoute: typeof ArticlesIntroArticlesImport
+      parentRoute: typeof rootRoute
+    }
     '/about/': {
       id: '/about/'
       path: '/about'
       fullPath: '/about'
       preLoaderRoute: typeof AboutIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/articles/category/': {
+      id: '/articles/category/'
+      path: '/articles/category'
+      fullPath: '/articles/category'
+      preLoaderRoute: typeof ArticlesCategoryIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/articles/category/$categoryid/': {
+      id: '/articles/category/$categoryid/'
+      path: '/articles/category/$categoryid'
+      fullPath: '/articles/category/$categoryid'
+      preLoaderRoute: typeof ArticlesCategoryCategoryidIndexImport
       parentRoute: typeof rootRoute
     }
   }
@@ -53,37 +96,68 @@ declare module '@tanstack/react-router' {
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/articles/introArticles': typeof ArticlesIntroArticlesRoute
   '/about': typeof AboutIndexRoute
+  '/articles/category': typeof ArticlesCategoryIndexRoute
+  '/articles/category/$categoryid': typeof ArticlesCategoryCategoryidIndexRoute
 }
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/articles/introArticles': typeof ArticlesIntroArticlesRoute
   '/about': typeof AboutIndexRoute
+  '/articles/category': typeof ArticlesCategoryIndexRoute
+  '/articles/category/$categoryid': typeof ArticlesCategoryCategoryidIndexRoute
 }
 
 export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexRoute
+  '/articles/introArticles': typeof ArticlesIntroArticlesRoute
   '/about/': typeof AboutIndexRoute
+  '/articles/category/': typeof ArticlesCategoryIndexRoute
+  '/articles/category/$categoryid/': typeof ArticlesCategoryCategoryidIndexRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about'
+  fullPaths:
+    | '/'
+    | '/articles/introArticles'
+    | '/about'
+    | '/articles/category'
+    | '/articles/category/$categoryid'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about'
-  id: '__root__' | '/' | '/about/'
+  to:
+    | '/'
+    | '/articles/introArticles'
+    | '/about'
+    | '/articles/category'
+    | '/articles/category/$categoryid'
+  id:
+    | '__root__'
+    | '/'
+    | '/articles/introArticles'
+    | '/about/'
+    | '/articles/category/'
+    | '/articles/category/$categoryid/'
   fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ArticlesIntroArticlesRoute: typeof ArticlesIntroArticlesRoute
   AboutIndexRoute: typeof AboutIndexRoute
+  ArticlesCategoryIndexRoute: typeof ArticlesCategoryIndexRoute
+  ArticlesCategoryCategoryidIndexRoute: typeof ArticlesCategoryCategoryidIndexRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ArticlesIntroArticlesRoute: ArticlesIntroArticlesRoute,
   AboutIndexRoute: AboutIndexRoute,
+  ArticlesCategoryIndexRoute: ArticlesCategoryIndexRoute,
+  ArticlesCategoryCategoryidIndexRoute: ArticlesCategoryCategoryidIndexRoute,
 }
 
 export const routeTree = rootRoute
@@ -97,14 +171,26 @@ export const routeTree = rootRoute
       "filePath": "__root.tsx",
       "children": [
         "/",
-        "/about/"
+        "/articles/introArticles",
+        "/about/",
+        "/articles/category/",
+        "/articles/category/$categoryid/"
       ]
     },
     "/": {
       "filePath": "index.tsx"
     },
+    "/articles/introArticles": {
+      "filePath": "articles/introArticles.tsx"
+    },
     "/about/": {
       "filePath": "about/index.tsx"
+    },
+    "/articles/category/": {
+      "filePath": "articles/category/index.tsx"
+    },
+    "/articles/category/$categoryid/": {
+      "filePath": "articles/category/$categoryid/index.tsx"
     }
   }
 }
