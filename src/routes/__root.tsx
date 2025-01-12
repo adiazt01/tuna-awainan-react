@@ -1,8 +1,8 @@
-import * as React from 'react'
-import { Link, Outlet, createRootRoute } from '@tanstack/react-router'
+import { Outlet, createRootRoute } from '@tanstack/react-router'
 import { TanStackRouterDevtools } from '@tanstack/router-devtools'
-import { SidebarProvider, SidebarTrigger } from '@/components/ui/sidebar'
+import { SidebarProvider } from '@/components/ui/sidebar'
 import { AppSidebar } from '@/components/core/sidebar'
+import { Toaster } from "@/components/ui/toaster"
 
 export const Route = createRootRoute({
   component: RootComponent,
@@ -19,6 +19,7 @@ function RootComponent() {
           <Outlet />
         </main>
       </SidebarProvider>
+      <Toaster />
       <TanStackRouterDevtools position="bottom-right" />
     </>
   )

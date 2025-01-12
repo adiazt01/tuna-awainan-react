@@ -2,9 +2,6 @@ import { createFileRoute } from '@tanstack/react-router'
 import { createClient } from '@supabase/supabase-js'
 import { Button } from '@/components/ui/button'
 
-const supabase = createClient(import.meta.env.VITE_SUPABASE_URL, import.meta.env.VITE_SUPABASE_API_KEY)
-
-
 export const Route = createFileRoute('/')({
   component: HomeComponent,
 })

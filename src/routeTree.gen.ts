@@ -18,6 +18,8 @@ import { Route as ArticlesIntroArticlesImport } from './routes/articles/introArt
 import { Route as ExpertoPostIndexImport } from './routes/experto/post/index'
 import { Route as ArticlesCategoryIndexImport } from './routes/articles/category/index'
 import { Route as ArticlesCategoryCategoryidIndexImport } from './routes/articles/category/$categoryid/index'
+import { Route as AuthRegisterIndexImport } from './routes/auth/register/index'
+import { Route as AuthLoginIndexImport } from './routes/auth/login/index'
 
 // Create/Update Routes
 
@@ -64,6 +66,18 @@ const ArticlesCategoryCategoryidIndexRoute =
     getParentRoute: () => rootRoute,
   } as any)
 
+const AuthRegisterIndexRoute = AuthRegisterIndexImport.update({
+  id: '/auth/register/',
+  path: '/auth/register/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const AuthLoginIndexRoute = AuthLoginIndexImport.update({
+  id: '/auth/login/',
+  path: '/auth/login/',
+  getParentRoute: () => rootRoute,
+} as any)
+
 // Populate the FileRoutesByPath interface
 
 declare module '@tanstack/react-router' {
@@ -96,27 +110,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutIndexImport
       parentRoute: typeof rootRoute
     }
-    '/articles/category/': {
-      id: '/articles/category/'
-      path: '/articles/category'
-      fullPath: '/articles/category'
-      preLoaderRoute: typeof ArticlesCategoryIndexImport
-      parentRoute: typeof rootRoute
-    }
-    '/experto/post/': {
-      id: '/experto/post/'
-      path: '/experto/post'
-      fullPath: '/experto/post'
-      preLoaderRoute: typeof ExpertoPostIndexImport
-      parentRoute: typeof rootRoute
-    }
-    '/articles/category/$categoryid/': {
-      id: '/articles/category/$categoryid/'
-      path: '/articles/category/$categoryid'
-      fullPath: '/articles/category/$categoryid'
-      preLoaderRoute: typeof ArticlesCategoryCategoryidIndexImport
-      parentRoute: typeof rootRoute
-    }
   }
 }
 
@@ -130,6 +123,8 @@ export interface FileRoutesByFullPath {
   '/articles/category': typeof ArticlesCategoryIndexRoute
   '/experto/post': typeof ExpertoPostIndexRoute
   '/articles/category/$categoryid': typeof ArticlesCategoryCategoryidIndexRoute
+  '/auth/login': typeof AuthLoginIndexRoute
+  '/auth/register': typeof AuthRegisterIndexRoute
 }
 
 export interface FileRoutesByTo {
@@ -140,6 +135,8 @@ export interface FileRoutesByTo {
   '/articles/category': typeof ArticlesCategoryIndexRoute
   '/experto/post': typeof ExpertoPostIndexRoute
   '/articles/category/$categoryid': typeof ArticlesCategoryCategoryidIndexRoute
+  '/auth/login': typeof AuthLoginIndexRoute
+  '/auth/register': typeof AuthRegisterIndexRoute
 }
 
 export interface FileRoutesById {
@@ -151,36 +148,16 @@ export interface FileRoutesById {
   '/articles/category/': typeof ArticlesCategoryIndexRoute
   '/experto/post/': typeof ExpertoPostIndexRoute
   '/articles/category/$categoryid/': typeof ArticlesCategoryCategoryidIndexRoute
+  '/auth/login/': typeof AuthLoginIndexRoute
+  '/auth/register/': typeof AuthRegisterIndexRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths:
-    | '/'
-    | '/articles/introArticles'
-    | '/experto/introExperto'
-    | '/about'
-    | '/articles/category'
-    | '/experto/post'
-    | '/articles/category/$categoryid'
+  fullPaths: '/' | '/about'
   fileRoutesByTo: FileRoutesByTo
-  to:
-    | '/'
-    | '/articles/introArticles'
-    | '/experto/introExperto'
-    | '/about'
-    | '/articles/category'
-    | '/experto/post'
-    | '/articles/category/$categoryid'
-  id:
-    | '__root__'
-    | '/'
-    | '/articles/introArticles'
-    | '/experto/introExperto'
-    | '/about/'
-    | '/articles/category/'
-    | '/experto/post/'
-    | '/articles/category/$categoryid/'
+  to: '/' | '/about' | '/auth/login' | '/auth/register'
+  id: '__root__' | '/' | '/about/' | '/auth/login/' | '/auth/register/'
   fileRoutesById: FileRoutesById
 }
 
@@ -192,6 +169,8 @@ export interface RootRouteChildren {
   ArticlesCategoryIndexRoute: typeof ArticlesCategoryIndexRoute
   ExpertoPostIndexRoute: typeof ExpertoPostIndexRoute
   ArticlesCategoryCategoryidIndexRoute: typeof ArticlesCategoryCategoryidIndexRoute
+  AuthLoginIndexRoute: typeof AuthLoginIndexRoute
+  AuthRegisterIndexRoute: typeof AuthRegisterIndexRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
@@ -202,6 +181,8 @@ const rootRouteChildren: RootRouteChildren = {
   ArticlesCategoryIndexRoute: ArticlesCategoryIndexRoute,
   ExpertoPostIndexRoute: ExpertoPostIndexRoute,
   ArticlesCategoryCategoryidIndexRoute: ArticlesCategoryCategoryidIndexRoute,
+  AuthLoginIndexRoute: AuthLoginIndexRoute,
+  AuthRegisterIndexRoute: AuthRegisterIndexRoute,
 }
 
 export const routeTree = rootRoute
@@ -221,6 +202,9 @@ export const routeTree = rootRoute
         "/articles/category/",
         "/experto/post/",
         "/articles/category/$categoryid/"
+        "/about/",
+        "/auth/login/",
+        "/auth/register/"
       ]
     },
     "/": {
@@ -234,16 +218,7 @@ export const routeTree = rootRoute
     },
     "/about/": {
       "filePath": "about/index.tsx"
-    },
-    "/articles/category/": {
-      "filePath": "articles/category/index.tsx"
-    },
-    "/experto/post/": {
-      "filePath": "experto/post/index.tsx"
-    },
-    "/articles/category/$categoryid/": {
-      "filePath": "articles/category/$categoryid/index.tsx"
     }
   }
 }
-ROUTE_MANIFEST_END */
+ROUTE_MANIFEST_END */}
