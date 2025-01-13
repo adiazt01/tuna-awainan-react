@@ -6,6 +6,7 @@ import { getProfileId, getSession } from '@/services/auth';
 import { fetchComments, postComment } from '@/services/comments';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { createFileRoute, Link } from '@tanstack/react-router'
+import Map from '@/components/map/map'
 
 export const Route = createFileRoute('/experto/post/$postid/')({
   
@@ -52,7 +53,10 @@ function PostComponent() {
     })
 
     const mutation = useMutation({
-        mutationFn: (newComment) => postComment(postid, newComment, id_user),
+        mutationFn: async (newComment) => {
+            const position = queryClient.getQueryData(['position']);
+            await postComment(postid, newComment, id_user, position);
+        },
         onSuccess: () => {
           // Invalidate and refetch
           queryClient.invalidateQueries({ queryKey: ['comments', postid] });
@@ -79,7 +83,7 @@ function PostComponent() {
 
     return (
 
-        <>
+        <div>
         <div className='mx-8 my-2 font-light text-gray-400'>
             <p>
                 Autor: {posts.profiles.username}
@@ -105,6 +109,8 @@ function PostComponent() {
             <p className='text-gray-700 leading-relaxed'>
                 {posts.content}
             </p>
+            <hr />
+            <Map postid={postid}></Map>
             <form className="mb-6 flex flex-col w-full mt-5" onSubmit={handleSubmit}>
             <div
             className="w-full py-2 px-4 mb-4 bg-white rounded-lg rounded-t-lg border border-gray-200 dark:bg-white dark:border-gray-700"
@@ -143,7 +149,7 @@ function PostComponent() {
 
 
         
-        </>
+        </div>
     );
 }
 

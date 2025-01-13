@@ -37,6 +37,9 @@ export function AppSidebar() {
             <Link to="/">Inicio</Link>
           </Button>
           <Button asChild variant={"sidebarLink"} size={"sidebarLink"}>
+            <Link to="/novedades">Novedades</Link>
+          </Button>
+          <Button asChild variant={"sidebarLink"} size={"sidebarLink"}>
             <Link to="/articles/introArticles">Artículos</Link>
           </Button>
           <Button asChild variant={"sidebarLink"} size={"sidebarLink"}>
