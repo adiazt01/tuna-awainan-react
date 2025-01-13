@@ -50,7 +50,7 @@ export function RegisterForm() {
                 setSession(session)
                 toast({
                     title: 'Registro exitoso',
-                    description: 'Bienvenido!',
+                    description: 'Verifica tu correo electrónico para continuar',
                 })
             } catch (error: unknown) {
                 toast({

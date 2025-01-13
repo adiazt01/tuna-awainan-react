@@ -41,7 +41,8 @@ export function LoginForm() {
     },
     onSubmit: async ({ value }) => {
       try {
-        const { session } = await loginMutation.mutateAsync(value)
+        const { session, user } = await loginMutation.mutateAsync(value)
+        console.log(user)
         setSession(session)
         toast({
           title: 'Inicio de sesión exitoso',
