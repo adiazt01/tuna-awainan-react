@@ -11,8 +11,8 @@ export const PostPage = ({post,coments}:Props) =>(
         <div className="flex flex-col items-center">
             <h1 className="text-3xl font-bold text-gray-800 dark:text-white">{post.title}</h1>
             <h4 className='italic'>Autor: {'Anonimo'}</h4>
-            <img src={post.imgFile} alt="" className="w-1/2 h-1/2" />
-            <p className="text-gray-700 dark:text-gray-400">{post.text}</p>
+            <img src={`${post.img}`} alt="" className="w-1/2 h-1/2" />
+            <p className="text-gray-700 dark:text-gray-400">{post.content}</p>
         </div>
 
         <form className="mt-[20px] " method="POST">

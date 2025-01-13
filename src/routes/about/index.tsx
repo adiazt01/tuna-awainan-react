@@ -1,9 +1,6 @@
 import { Button } from '@/components/ui/button'
 import { createFileRoute } from '@tanstack/react-router'
-import { CardsEspecimens } from '@/components/aquarium/CardsEspecimen'
-import { EspecimenPage } from '@/components/aquarium/EspecimenPage'
-import { CardsPosts } from '@/components/novedades/CardsPosts'
-import { PostPage } from '@/components/novedades/PostPage'
+import { PostPage } from '@/components/Comunidad/PostPage'
 
 
 export const Route = createFileRoute('/about/')({

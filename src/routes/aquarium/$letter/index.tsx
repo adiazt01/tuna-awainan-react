@@ -1,13 +1,9 @@
-import { CardEspecimen } from '@/components/aquarium/CardEspecimen'
 import { LayoutEspecimen } from '@/components/aquarium/layout/LayoutEspecimen'
 import { supabase } from '@/lib/supabase'
-import { Especimen } from '@/type.d'
 import { useQuery } from '@tanstack/react-query'
 import { createFileRoute } from '@tanstack/react-router'
 import { type ListOfEspecimens } from '@/type.d'
 import { CardsEspecimens } from '@/components/aquarium/CardsEspecimen'
-import { list } from 'postcss'
-import { List } from 'lucide-react'
 
 export const Route = createFileRoute('/aquarium/$letter/')({
   loader: async ({ params }) => resultadosLetter(params.letter),

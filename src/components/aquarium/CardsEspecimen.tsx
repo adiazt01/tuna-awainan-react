@@ -18,7 +18,7 @@ export const CardsEspecimens = ({especimens}:Props) => {
                     <CardEspecimen
                         id={especimen.id}
                         name={especimen.name}
-                        namePsientific={especimen.namePsientific}
+                        name_scientific={especimen.name_scientific}
                         img={especimen.img}
                         description={especimen.description}
                     />

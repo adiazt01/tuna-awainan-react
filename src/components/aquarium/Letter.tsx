@@ -18,7 +18,7 @@ export const Letter = ({letter,selected}:Props) => {
         <Link type="button" to={`/aquarium/$letter`} params={{ letter: letter }}
         className={estilo}
     >
-            {letter}
+            {letter.toUpperCase()}
         </Link>
 
     </button>

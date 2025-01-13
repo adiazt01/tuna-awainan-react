@@ -13,7 +13,7 @@ function RootComponent() {
     <>
       <SidebarProvider>
         <AppSidebar />
-        <main className='border border-red-500 flex-1'>
+        <main className='border flex-1'>
           {/* <SidebarTrigger /> */}
 
           <Outlet />

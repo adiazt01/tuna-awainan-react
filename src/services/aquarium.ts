@@ -21,7 +21,7 @@ export const Abecedario = () => {
     //obtenemos todas las primeras letras 
     let letraRepetidas = data?.map((item) => item.name[0])
 
-    return [...new Set(letraRepetidas)]
+    return [...new Set(letraRepetidas)].sort()
     
     
 
