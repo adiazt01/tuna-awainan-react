@@ -36,6 +36,10 @@ export function AppSidebar() {
           <Button asChild variant={"sidebarLink"} size={"sidebarLink"}>
             <Link to="/about">Home</Link>
           </Button>
+
+          <Button asChild variant={"sidebarLink"} size={"sidebarLink"}>
+            <Link to="/aquarium">Acuario</Link>
+          </Button>
           {
             session ? (
               <Button
@@ -45,10 +49,12 @@ export function AppSidebar() {
               </Button>
             ) : (
               <Button asChild variant={"sidebarLink"} size={"sidebarLink"}>
-                <Link to="/auth/login">Login</Link>
+                <Link to="/auth/login">Cuenta</Link>
               </Button>
             )
           }
+
+          
         </SidebarGroup>
 
       </SidebarContent>
