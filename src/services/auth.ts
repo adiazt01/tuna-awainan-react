@@ -38,3 +38,28 @@ export const logout = async () => {
     throw error
   }
 }
+
+export const getSession = async () => {
+  const { data, error } = await supabase.auth.getSession()
+  if (error) {
+    throw error
+  
+  }
+
+  return data.session;
+}
+
+export const getProfileId = async (id) => {
+  const { data, error } = await supabase
+  .from('profiles')
+  .select('profile_id')
+  .eq('id', id)
+  .single();
+
+  if (error) {
+    throw error
+  }
+  
+  return data.profile_id;
+
+}

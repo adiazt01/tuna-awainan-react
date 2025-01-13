@@ -6,7 +6,3 @@
   .hide-scroll-bar::-webkit-scrollbar {
     display: none;  
   }
-
-h1, p {
-    font-family: "Quicksand Variable", sans-serif;
-  }

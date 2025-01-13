@@ -10,7 +10,3 @@ span{
 .hide-scroll-bar::-webkit-scrollbar {
     display: none;  
 }
-
-.font-custom{
-    font-family: "Quicksand Variable", "Helvetica", Arial, sans-serif;
-}

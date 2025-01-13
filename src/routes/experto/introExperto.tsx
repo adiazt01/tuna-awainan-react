@@ -20,7 +20,7 @@ function introExpertComponent() {
       
         </p>
 
-        <Button>
+        <Button className='hover:bg-[#087b9b]'>
           <Link to={'/experto/post'}> Ver posts</Link>
         </Button>
 
