@@ -84,6 +84,6 @@ const mockComentsPost = [
 function RouteComponent() {
 
   return <div>
-    <PostPage post={moksPost[1]} coments={mockComentsPost}/>
+    <CardsPosts posts={moksPost}/>
   </div>
 }
