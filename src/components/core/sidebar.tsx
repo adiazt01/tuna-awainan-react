@@ -32,37 +32,37 @@ export function AppSidebar() {
             AWAINAN
           </h2>
         </SidebarGroup>
-        <SidebarGroup className="flex flex-col gap-6">
-          <Button asChild variant={"sidebarLink"} size={"sidebarLink"}>
+        <SidebarGroup className="flex flex-col gap-4 overflow-hidden">
+          <Button asChild variant={"sidebarLink"} size={"sidebarLink"} className="text-2xl">
             <Link to="/">Inicio</Link>
           </Button>
-          <Button asChild variant={"sidebarLink"} size={"sidebarLink"}>
+          <Button asChild variant={"sidebarLink"} size={"sidebarLink"} className="text-2xl">
             <Link to="/novedades">Novedades</Link>
           </Button>
-          <Button asChild variant={"sidebarLink"} size={"sidebarLink"}>
+          <Button asChild variant={"sidebarLink"} size={"sidebarLink"} className="text-2xl">
             <Link to="/aquarium">Acuario</Link>
           </Button>
-          <Button asChild variant={"sidebarLink"} size={"sidebarLink"}>
+          <Button asChild variant={"sidebarLink"} size={"sidebarLink"} className="text-2xl">
             <Link to="/articles/introArticles">Artículos</Link>
           </Button>
-          <Button asChild variant={"sidebarLink"} size={"sidebarLink"}>
+          <Button asChild variant={"sidebarLink"} size={"sidebarLink"} className="text-2xl">
             <Link to="/experto/introExperto">Expertos</Link>
           </Button>
-          <Button asChild variant={"sidebarLink"} size={"sidebarLink"}>
+          <Button asChild variant={"sidebarLink"} size={"sidebarLink"} className="text-2xl">
             <Link to="/community/introCommunity">Comunidad</Link>
           </Button>
-          <Button asChild variant={"sidebarLink"} size={"sidebarLink"}>
+          <Button asChild variant={"sidebarLink"} size={"sidebarLink"} className="text-2xl">
             <Link to="/about">Sobre nosotros</Link>
           </Button>
           {
             session ? (
               <Button
                 onClick={() => lgoutMutaion.mutate()}
-                variant={"sidebarLink"} size={"sidebarLink"}>
+                variant={"sidebarLink"} size={"sidebarLink"} className="text-2xl">
                 Logout
               </Button>
             ) : (
-              <Button asChild variant={"sidebarLink"} size={"sidebarLink"}>
+              <Button asChild variant={"sidebarLink"} size={"sidebarLink"} className="text-2xl">
                 <Link to="/auth/login">Iniciar sesión</Link>
               </Button>
             )
