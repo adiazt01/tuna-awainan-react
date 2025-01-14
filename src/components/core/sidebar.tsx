@@ -21,20 +21,38 @@ export function AppSidebar() {
 
   return (
     <Sidebar >
-      <SidebarHeader />
-      <SidebarContent className="flex flex-col justify-center my-auto  mb-8">
+      <SidebarContent className="flex flex-col justify-center mb-20">
         <SidebarGroup className="px-4">
-          <h2 className="scroll-m-20 border-b pb-2 text-4xl font-semibold tracking-tight text-center first:mt-0">
+          <img src="/src/assets/images/TUNA-awainan.png" alt="" className="w-32 h-32 mx-auto"/>
+          <h2 className="scroll-m-20 pb-2 text-4xl font-semibold tracking-tight text-center first:mt-0">
             TUNA
           </h2>
-          <h2 className="scroll-m-20 border-b pb-2 text-4xl
+          <h2 className="scroll-m-20 pb-2 text-4xl
           text-primary font-semibold tracking-tight text-center first:mt-0">
             AWAINAN
           </h2>
         </SidebarGroup>
         <SidebarGroup className="flex flex-col gap-6">
           <Button asChild variant={"sidebarLink"} size={"sidebarLink"}>
-            <Link to="/about">Home</Link>
+            <Link to="/">Inicio</Link>
+          </Button>
+          <Button asChild variant={"sidebarLink"} size={"sidebarLink"}>
+            <Link to="/novedades">Novedades</Link>
+          </Button>
+          <Button asChild variant={"sidebarLink"} size={"sidebarLink"}>
+            <Link to="/aquarium">Acuario</Link>
+          </Button>
+          <Button asChild variant={"sidebarLink"} size={"sidebarLink"}>
+            <Link to="/articles/introArticles">Artículos</Link>
+          </Button>
+          <Button asChild variant={"sidebarLink"} size={"sidebarLink"}>
+            <Link to="/experto/introExperto">Expertos</Link>
+          </Button>
+          <Button asChild variant={"sidebarLink"} size={"sidebarLink"}>
+            <Link to="/community/introCommunity">Comunidad</Link>
+          </Button>
+          <Button asChild variant={"sidebarLink"} size={"sidebarLink"}>
+            <Link to="/about">Sobre nosotros</Link>
           </Button>
 
           <Button asChild variant={"sidebarLink"} size={"sidebarLink"}>
@@ -53,7 +71,7 @@ export function AppSidebar() {
               </Button>
             ) : (
               <Button asChild variant={"sidebarLink"} size={"sidebarLink"}>
-                <Link to="/auth/login">Cuenta</Link>
+                <Link to="/auth/login">Iniciar sesión</Link>
               </Button>
             ) 
           }

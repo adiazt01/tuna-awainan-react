@@ -26,7 +26,7 @@ function RouteComponent() {
       </div>
       <div className="relative hidden bg-muted lg:block">
         <img
-          src="https://tse4.mm.bing.net/th?id=OIP._cKTWK21O1gjlJs8bm0xowAAAA&pid=Api"
+          src="https://www.viajesordaz.com/wp-content/uploads/2022/12/18562623.jpg"
           alt="Image"
           className="absolute inset-0 h-full w-full object-fill"
         />

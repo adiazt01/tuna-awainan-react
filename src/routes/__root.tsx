@@ -3,6 +3,7 @@ import { TanStackRouterDevtools } from '@tanstack/router-devtools'
 import { SidebarProvider } from '@/components/ui/sidebar'
 import { AppSidebar } from '@/components/core/sidebar'
 import { Toaster } from "@/components/ui/toaster"
+import './index.css'
 
 export const Route = createRootRoute({
   component: RootComponent,
@@ -13,14 +14,13 @@ function RootComponent() {
     <>
       <SidebarProvider>
         <AppSidebar />
-        <main className='border flex-1'>
-          {/* <SidebarTrigger /> */}
+          <main className='flex-auto m-0 p-0'>
+            {/* <SidebarTrigger /> */}
 
-          <Outlet />
-        </main>
+            <Outlet />
+          </main>
       </SidebarProvider>
       <Toaster />
-      <TanStackRouterDevtools position="bottom-right" />
     </>
   )
 }
