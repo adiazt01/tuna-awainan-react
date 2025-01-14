@@ -18,7 +18,7 @@ export function Category() {
     if (error) return <div>Error: {error.message}</div>;
   
 
-    return (<div className='container mx-auto px-4 py-2 bg-[#0aaccb]'>
+    return (<div className='container mx-auto py-2 bg-[#0aaccb]'>
         <h2 className="font-custom flex justify-center text-2xl font-bold text-white mb-4">Categorías</h2>
         <div className='flex flex-wrap justify-center space-x-4 overflow-x-auto hide-scroll-bar'>
             {tags && tags.map((tag) => (

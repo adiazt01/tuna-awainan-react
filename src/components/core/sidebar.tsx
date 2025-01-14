@@ -40,10 +40,16 @@ export function AppSidebar() {
             <Link to="/novedades">Novedades</Link>
           </Button>
           <Button asChild variant={"sidebarLink"} size={"sidebarLink"}>
+            <Link to="/aquarium">Acuario</Link>
+          </Button>
+          <Button asChild variant={"sidebarLink"} size={"sidebarLink"}>
             <Link to="/articles/introArticles">Artículos</Link>
           </Button>
           <Button asChild variant={"sidebarLink"} size={"sidebarLink"}>
             <Link to="/experto/introExperto">Expertos</Link>
+          </Button>
+          <Button asChild variant={"sidebarLink"} size={"sidebarLink"}>
+            <Link to="/community/introCommunity">Comunidad</Link>
           </Button>
           <Button asChild variant={"sidebarLink"} size={"sidebarLink"}>
             <Link to="/about">Sobre nosotros</Link>

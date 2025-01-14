@@ -6,7 +6,7 @@ import { getProfileId, getSession } from '@/services/auth';
 import { fetchComments, postComment } from '@/services/comments';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { createFileRoute, Link } from '@tanstack/react-router'
-import Map from '@/components/map/map'
+import Map from '@/components/map/mapposts'
 
 export const Route = createFileRoute('/experto/post/$postid/')({
   
