@@ -32,7 +32,7 @@ export function AppSidebar() {
             AWAINAN
           </h2>
         </SidebarGroup>
-        <SidebarGroup className="flex flex-col gap-4 overflow-hidden">
+        <SidebarGroup className="flex flex-col gap-4 overflow-auto">
           <Button asChild variant={"sidebarLink"} size={"sidebarLink"} className="text-2xl">
             <Link to="/">Inicio</Link>
           </Button>
